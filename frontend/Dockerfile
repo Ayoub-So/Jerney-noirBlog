@@ -1,5 +1,7 @@
 # ---- Build stage ----
-FROM node:20-alpine AS build
+FROM node:20.18.1-alpine3.20 AS build
+# Force download of all recent OS-level security patches
+RUN apk update && apk upgrade --no-cache
 WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm ci && npm cache clean --force
@@ -7,7 +9,10 @@ COPY . .
 RUN npm run build
 
 # ---- Production stage ----
-FROM nginx:1.27-alpine AS production
+FROM nginx:1.27.4-alpine AS production
+
+# Force download of all recent OS-level security patches
+RUN apk update && apk upgrade --no-cache
 
 # Security: remove default nginx config
 RUN rm -rf /etc/nginx/conf.d/default.conf /usr/share/nginx/html/*

@@ -16,7 +16,7 @@ jobs:
     lint:
         name: "Lint Code"
         runs-on: self-hosted
-        continue-on-error: true
+        continue-on-error: false
         strategy:
             matrix:
                 component: [backend, frontend]
