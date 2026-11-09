@@ -75,7 +75,7 @@ jobs:
     build:
         name: "Build ${{ matrix.component }}"
         runs-on: self-hosted
-        needs: sca
+        needs: [sca, dockerfile-lint]
         permissions:
             contents: read
             packages: write # Needed to push to GHCR
@@ -118,8 +118,8 @@ jobs:
                 cache-from: type=gha
                 cache-to: type=gha,mode=max
             # Security: provenance and SBOM
-                provenance: true
-                sbom: true
+                provenance: false
+                sbom: false
 
     
   # ==============================================================
@@ -210,6 +210,7 @@ jobs:
     update-manifest:
       name: "Update K8s Manifest"
       runs-on: self-hosted
+      needs: build
       if: github.event_name == 'push'
       permissions:
         contents: write # Needed to push manifest changes
