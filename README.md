@@ -8,6 +8,11 @@ A Gen-Z vibe blog platform built with a 3-tier architecture — React frontend, 
 
 ---
 
+## Architecture Diagram
+
+<img width="1255" height="832" alt="image_24206fef" src="https://github.com/user-attachments/assets/d3756a24-5020-47e6-916c-bc7a40d5939a" />
+
+
 
 ## ✨ Features
 
