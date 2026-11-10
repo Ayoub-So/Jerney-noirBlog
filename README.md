@@ -1,6 +1,6 @@
 # 🛤️ Jerney — Blog Platform
 
-A Gen-Z vibe blog platform built with a 3-tier architecture — React frontend, Node.js backend, and PostgreSQL database.
+A Gen-Z vibe blog platform built with a 3-tier architecture — React frontend, Node.js backend, and PostgreSQL database, with end-to-end DevSecOps pipeline from commit to deployment on AWS EKS.
 
 ![Tech Stack](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)
 ![Tech Stack](https://img.shields.io/badge/Node.js-20-339933?style=flat-square&logo=node.js)
@@ -8,15 +8,6 @@ A Gen-Z vibe blog platform built with a 3-tier architecture — React frontend, 
 
 ---
 
-> [!IMPORTANT]
-> **Looking for the full DevSecOps implementation?**
-> Switch to the [`devops`](../../tree/devops) branch for Docker, Kubernetes (EKS Auto Mode), Terraform, CI/CD with GitHub Actions, container security scanning, and more.
->
-> ```bash
-> git checkout devops
-> ```
-
----
 
 ## ✨ Features
 
@@ -172,8 +163,7 @@ The Vite dev server starts on `http://localhost:3000` and proxies `/api` request
 
 | Branch | Purpose |
 |--------|---------|
-| `main` | Source code + EC2 bare-metal deployment |
-| `devops` | Full DevSecOps — Docker, Kubernetes (EKS), Terraform, CI/CD pipeline, security scanning |
+| `main` | Source code + EC2 bare-metal deployment, Full DevSecOps — Docker, Kubernetes (EKS), Terraform, CI/CD pipeline, security scanning |
 
 ---
 
